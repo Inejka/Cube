@@ -176,6 +176,7 @@ void Cube3::shuffle() {
 
 void Cube3::load() {
     freopen("input.txt","r",stdin);
+    std::cin.seekg(0);
     std::cin >> (*this) ;
     fclose(stdin);
     freopen("CON","r",stdin);

@@ -253,6 +253,7 @@ std::ostream &operator<<(std::ostream &out, const Cube &rhs) {
                     out << rhs.getColor(i,j);
 
     }
+    return out;
 }
 
 std::istream &operator>>(std::istream &in, Cube &rhs) {
@@ -267,6 +268,7 @@ std::istream &operator>>(std::istream &in, Cube &rhs) {
             for(int j = 0 ; j < rhs.getSize()*3; j++,counter++)
                 rhs.matrix[i][j]=input[counter]-'0';
     }
+    return in;
 }
 
 void Cube::back_to_normal() {

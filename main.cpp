@@ -2,7 +2,7 @@
 #include "Cube3.h"
 #include <string>
 #include <SFML/Graphics.hpp>
-
+#include <fstream>
 using namespace std;
 using namespace sf;
 
@@ -54,6 +54,7 @@ int main() {
         main_window.draw(text);
         main_window.display();
     }
+    //cout << cube;
     //if(test==cube)cout << "YEP" ; else cout << "NOPE" ;
 }
 
