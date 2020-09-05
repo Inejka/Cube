@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/inejka/CLionProjects/MagicCube2/Cube/Cube.h
+string
+-
+
+/home/inejka/CLionProjects/MagicCube2/Cube3.h
+string
+-
+Cube/Cube.h
+/home/inejka/CLionProjects/MagicCube2/Cube/Cube.h
+
+/home/inejka/CLionProjects/MagicCube2/main.cpp
+iostream
+-
+Cube3.h
+/home/inejka/CLionProjects/MagicCube2/Cube3.h
+string
+-
+SFML/Graphics.hpp
+-
+SFML/System.hpp
+-
+

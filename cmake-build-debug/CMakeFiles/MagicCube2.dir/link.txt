@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/MagicCube2.dir/main.cpp.o CMakeFiles/MagicCube2.dir/Cube/Cube.cpp.o CMakeFiles/MagicCube2.dir/Cube3.cpp.o  -o MagicCube2  /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1 

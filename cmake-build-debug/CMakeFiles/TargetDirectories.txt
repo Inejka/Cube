@@ -1,0 +1,3 @@
+/home/inejka/CLionProjects/MagicCube2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/inejka/CLionProjects/MagicCube2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/inejka/CLionProjects/MagicCube2/cmake-build-debug/CMakeFiles/MagicCube2.dir
