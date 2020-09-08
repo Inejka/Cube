@@ -6,7 +6,7 @@
  */
 #ifndef MAGICCUBE2_CUBE_H
 #define MAGICCUBE2_CUBE_H
-
+enum colours{white=1,yellow,red,orange,blue,green};
 
 #include <string>
 
