@@ -4,9 +4,9 @@
 
 #include "Cube3.h"
 #include <ctime>
-#include <fstream>
 #include <iostream>
-Cube3::Cube3() : Cube(3){}
+
+Cube3::Cube3() : Cube(3) {}
 
 void Cube3::command(std::string commands) {
     short times;
@@ -23,37 +23,37 @@ void Cube3::command(std::string commands) {
             switch (commands[i]) {
                 case 'F': {
                     for (int j = 0; j < times; ++j) {
-                        isInverse?F_():F();
+                        isInverse ? F_() : F();
                     }
                     break;
                 }
                 case 'B': {
                     for (int j = 0; j < times; ++j) {
-                        isInverse?B_():B();
+                        isInverse ? B_() : B();
                     }
                     break;
                 }
                 case 'L': {
                     for (int j = 0; j < times; ++j) {
-                        isInverse?L_():L();
+                        isInverse ? L_() : L();
                     }
                     break;
                 }
                 case 'R': {
                     for (int j = 0; j < times; ++j) {
-                        isInverse?R_():R();
+                        isInverse ? R_() : R();
                     }
                     break;
                 }
                 case 'U': {
                     for (int j = 0; j < times; ++j) {
-                        isInverse?U_():U();
+                        isInverse ? U_() : U();
                     }
                     break;
                 }
                 case 'D': {
                     for (int j = 0; j < times; ++j) {
-                        isInverse?D_():D();
+                        isInverse ? D_() : D();
                     }
                     break;
                 }
@@ -130,9 +130,9 @@ void Cube3::B_() {
 
 void Cube3::shuffle() {
     srand(time(0));
-    int random ;
-    for(int i = 0 ; i < 40 ; i++){
-        random = rand() % 12 ;
+    int random;
+    for (int i = 0; i < 40; i++) {
+        random = rand() % 12;
         switch (random) {
             case 0:
                 L();
@@ -175,39 +175,33 @@ void Cube3::shuffle() {
 }
 
 void Cube3::load() {
-    freopen("input.txt","r",stdin);
+    freopen("input.txt", "r", stdin);
     std::cin.seekg(0);
-    std::cin >> (*this) ;
+    std::cin >> (*this);
     fclose(stdin);
-    freopen("CON","r",stdin);
+    freopen("CON", "r", stdin);
 }
 
 void Cube3::save() {
-    freopen("output.txt","w",stdout);
+    freopen("output.txt", "w", stdout);
     std::cout << (*this);
     fclose(stdout);
-    freopen("CON","r",stdout);
+    freopen("CON", "r", stdout);
 }
 
-bool check_near(const Cube & cube,int pos_x,int pos_y){
-    return ( cube.getColor(pos_x,pos_y)==cube.getColor(pos_x-1,pos_y-1) &&
-            cube.getColor(pos_x,pos_y)==cube.getColor(pos_x,pos_y-1) &&
-            cube.getColor(pos_x,pos_y)==cube.getColor(pos_x+1,pos_y-1) &&
-            cube.getColor(pos_x,pos_y)==cube.getColor(pos_x+1,pos_y) &&
-            cube.getColor(pos_x,pos_y)==cube.getColor(pos_x-1,pos_y) &&
-            cube.getColor(pos_x,pos_y)==cube.getColor(pos_x-1,pos_y+1) &&
-            cube.getColor(pos_x,pos_y)==cube.getColor(pos_x,pos_y+1) &&
-            cube.getColor(pos_x,pos_y)==cube.getColor(pos_x+1,pos_y+1)
-            );
+bool check_near(const Cube &cube, int pos_x, int pos_y) {
+    for(int i = -1 ; i < 2 ; i++)
+        for(int j = -1 ; j < 2 ; j++)
+            if(cube.getColor(pos_x+i,pos_y+j)!=cube.getColor(pos_x+1,pos_y+1))return false;
 }
 
-
+                                                                            
 bool Cube3::check() {
-    return (check_near(*this,1,4) &&
-            check_near(*this,4,4) &&
-            check_near(*this,7,4) &&
-            check_near(*this,10,4) &&
-            check_near(*this,7,1) &&
-            check_near(*this,7,7)
+    return (check_near(*this, 1, 4) &&
+            check_near(*this, 4, 4) &&
+            check_near(*this, 7, 4) &&
+            check_near(*this, 10, 4) &&
+            check_near(*this, 7, 1) &&
+            check_near(*this, 7, 7)
     );
 }

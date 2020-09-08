@@ -12,7 +12,7 @@
 #include <string>
 #include "Cube/Cube.h"
 
-class Cube3: public Cube{
+class Cube3 : public Cube {
 public:
     ///Конструктор,задающий размер кубика
     Cube3();
@@ -23,10 +23,10 @@ public:
      */
     bool check();
 
-     /**
-      * Ввод строки управления на языке поворотов
-      * @param[in] commands строка,состоящая из следующих комманд,разделённых пробелом:L,R,F,B,U,D,L',R',F',B',U',D'
-      */
+    /**
+     * Ввод строки управления на языке поворотов
+     * @param[in] commands строка,состоящая из следующих комманд,разделённых пробелом:L,R,F,B,U,D,L',R',F',B',U',D'
+     */
     void command(std::string commands);
 
     /**
@@ -43,18 +43,30 @@ public:
      * Сохранение кубика в файл "output.txt"
      */
     void save();
+
 private:
     void U();
+
     void U_();
+
     void D();
+
     void D_();
+
     void R();
+
     void R_();
+
     void L();
+
     void L_();
+
     void F();
+
     void F_();
+
     void B();
+
     void B_();
 };
 

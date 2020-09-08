@@ -6,23 +6,23 @@
  */
 #ifndef MAGICCUBE2_CUBE_H
 #define MAGICCUBE2_CUBE_H
-enum colours{white=1,yellow,red,orange,blue,green};
+enum colours {
+    unknown, white, yellow, red, orange, blue, green
+};
 
 #include <string>
 
 class Cube {
 private:
-    short **matrix;   ///< Основная матрица
+    colours **matrix;   ///< Основная матрица
     int size;         ///< Размер куба
-    const short white = 1, yellow = 2, red = 3, orange = 4, blue = 5, green = 6;
-
     // Тот самый поворот цветов вокруг центра, но только для левой и право сторон
     void rotateSide(bool direction, bool side); //работает
     //то же что и RotateSide,но для верхней и нижней грани side=true>> up side  direction = true >> clockwise
     void anotherRotateSide(bool direction, bool side); //работает
 
-    void clockwise(int,int); //работает
-    void anticlockwise(int,int); //работает
+    void clockwise(int, int); //работает
+    void anticlockwise(int, int); //работает
     void back_to_normal();
 
 
@@ -43,12 +43,15 @@ public:
     ~Cube();
 
     ///Конструктор-копировщик
-    Cube(const Cube&);
+    Cube(const Cube &);
 
-    Cube & operator=(const Cube&);
-    friend std::ostream &operator <<(std::ostream &,const Cube&);
-    friend std::istream &operator >> (std::istream&,Cube& );
-    bool operator==(const Cube&);
+    Cube &operator=(const Cube &);
+
+    friend std::ostream &operator<<(std::ostream &, const Cube &);
+
+    friend std::istream &operator>>(std::istream &, Cube &);
+
+    bool operator==(const Cube &);
 
     //Те самые повороты, из-за которых нужно крутить цвета
     /**
@@ -64,13 +67,13 @@ public:
      */
     void rotateCubeHorizontally(bool direction);
 
-   /**
-    * Получение цвета из индекса i,j
-    * @param[in] i номер строки
-    * @param[in] j номер столбца
-    * @return цвет в matrix[i][j]
-    */
-    short getColor(int i, int j) const; //работает
+    /**
+     * Получение цвета из индекса i,j
+     * @param[in] i номер строки
+     * @param[in] j номер столбца
+     * @return цвет в matrix[i][j]
+     */
+    colours getColor(int i, int j) const; //работает
 
     /**
      * @return размер кубика
@@ -80,7 +83,8 @@ public:
     /**
      Перевод матрицы кубика в строку
      */
-    std::string print()const;
+    std::string print() const;
+
 protected:
     /**
      * Вращение столбца
